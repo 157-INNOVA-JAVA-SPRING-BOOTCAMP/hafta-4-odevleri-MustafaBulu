@@ -1,0 +1,92 @@
+<!doctype html>
+<html  th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+    <title>Register </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"   th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script th:src="@{/js/template2.js}"></script>
+</head>
+<body class="bg-dark text-primary">
+<!--start codes-->
+<!--th:action:getMapping
+th:object:model key-->
+<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5"style="color: black" >Create an account</h2>
+
+                            <form th:method="post" th:action="@{/register}" th:object="${key_form}" >
+
+                                <div class="form-outline mb-4">
+                                    <input th:field="*{userName}" input type="text"  class="form-control form-control-lg" placeholder="UserName" autofocus />
+                                    <div th:if="${#fields.hasErrors('userName')}"  th:errors="*{userName}"></div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+
+                                    <input th:field="*{userFirstName}" type="text" class="form-control form-control-lg" placeholder="FirstName" autofocus>
+                                    <div th:if="${#fields.hasErrors('userFirstName')}" th:errors="*{userFirstName}"></div>
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+
+                                    <input th:field="*{userSurname}" type="text" class="form-control form-control-lg" placeholder="Surname">
+                                    <div th:if="${#fields.hasErrors('userSurname')}" th:errors="*{userSurname}"></div>
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+
+                                    <input th:field="*{emailAddress}" type="text" class="form-control form-control-lg" placeholder="E-mail address">
+                                    <div th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"></div>
+
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+
+                                    <input th:field="*{userPassword}" type="text" class="form-control form-control-lg" placeholder="Password">
+                                    <div th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"></div>
+
+
+                                </div>
+
+
+
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10 form-group">
+                                    <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Register">
+                                    <a href="https://github.com/MustafaBulu"><i class="fa fa-github" style='font-size:30px'></i></a>
+                                    <a href="https://www.linkedin.com/in/mustafa-bulu-75bb55201/"><i class="fa fa-linkedin" style='font-size:30px'></i></a>
+                                </div>
+
+
+
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--end codes-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
